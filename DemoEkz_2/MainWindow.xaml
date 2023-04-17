@@ -1,0 +1,55 @@
+﻿<Window x:Class="DemoEkz_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoEkz_2"
+        mc:Ignorable="d"
+        Title="Попрыженок" Height="600" Width="1000"
+        FontFamily="Comic sans ms" Icon="/Попрыженок.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border 
+            Grid.RowSpan="2"
+            Background="{DynamicResource accentBackground}"
+            >
+            <Image Source="Icons/Попрыженок.png"  
+            VerticalAlignment="Top"
+            Margin="20"></Image>
+        </Border>
+        <Border Grid.Column="1" 
+                Grid.Row="0" 
+                Background="{DynamicResource accentBackground}"
+                >
+            <TextBlock
+                Text="{Binding Content.Title, ElementName=pageContainer}"
+                Foreground="White"
+                FontSize="35"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                />
+        </Border>
+        <Border Grid.Column="0" 
+                Grid.Row="1" 
+                >
+            <StackPanel
+                VerticalAlignment="Center">
+                <Button Content="Агенты" Click="ToAgentPage_Click"/>
+            </StackPanel>
+        </Border>
+        <Frame
+            Grid.Column="1"
+            Grid.Row="1"
+            x:Name="pageContainer"
+            NavigationUIVisibility="Hidden"
+            >
+        </Frame>
+    </Grid>
+</Window>

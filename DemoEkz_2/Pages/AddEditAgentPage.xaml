@@ -1,0 +1,51 @@
+﻿<Page x:Class="DemoEkz_2.Pages.AddEditAgentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemoEkz_2.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Работа с агентами">
+
+    <Grid VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding Text, ElementName=cmbLogo}" Grid.Column="0" Margin="10,0,0,0"></Image>
+        <Grid Grid.Column="1">
+            <StackPanel HorizontalAlignment="Right">
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Наименование" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Тип агента" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Адресс" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="ИНН" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="КПП" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Имя директора" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Телефон" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Почта" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Логотип" Height="30" FontSize="20"></TextBlock>
+                <TextBlock TextAlignment="Right" Margin="0,5" Text="Приоритет" Height="30" FontSize="20"></TextBlock>
+                <Button Content="Отменить" Height="30" FontSize="20" MinWidth="200" Click="Cancel_Click"></Button>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="3">
+            <StackPanel HorizontalAlignment="Left">
+                <TextBox Margin="0,5" x:Name="txtTitle" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <ComboBox Margin="0,5" x:Name="cmbAgentType" Height="30" FontSize="20" MinWidth="200" DisplayMemberPath="Title"></ComboBox>
+                <TextBox Margin="0,5" x:Name="txtAdress" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtINN" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtKPP" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtDirectorName" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtPhone" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <TextBox Margin="0,5" x:Name="txtEmail" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <ComboBox Margin="0,5" x:Name="cmbLogo" Height="30" FontSize="20" MinWidth="200" DisplayMemberPath="PathToIcon"></ComboBox>
+                <TextBox Margin="0,5" x:Name="txtPriority" Height="30" FontSize="20" MinWidth="200"></TextBox>
+                <Button Content="Сохранить" Height="30" FontSize="20" MinWidth="200" Click="Save_Click"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
